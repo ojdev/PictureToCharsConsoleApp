@@ -11,13 +11,14 @@ namespace PictureToCharsConsoleApp
             var path = @"E:\Pictures\1.png";
             Bitmap bitMap = new(path);
             //var chars = "#8XOHD69&$%)i=xo+;:,. ";
-            var chars = "@#*x+/\\o:~-. ";
+            var chars = "@#*x+/\\o=~-|:. ";
+            //var chars = "▄▃▂▁. ";
             //var chars = "@#$xo);:',. ";
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars);
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 1, 2);
-            var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 2, 4);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 2, 4);
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 3, 6);
-            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 4, 8);
+            var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 4, 8);
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 5, 10);
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 6, 12); 
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 7, 14);
