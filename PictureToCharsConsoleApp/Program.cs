@@ -8,7 +8,7 @@ namespace PictureToCharsConsoleApp
     {
         static void Main(string[] args)
         {
-            var path = @"E:\Pictures\1.png";
+            var path = @"2.jpg";
             Bitmap bitMap = new(path);
             //var chars = "#8XOHD69&$%)i=xo+;:,. ";
             var chars = "@#*+/\\:. ";
