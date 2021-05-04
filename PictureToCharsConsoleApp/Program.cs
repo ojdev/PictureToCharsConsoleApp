@@ -8,12 +8,20 @@ namespace PictureToCharsConsoleApp
     {
         static void Main(string[] args)
         {
-            Bitmap bitMap = new(@"E:\Pictures\avatar.jpeg");
-            var chars = "#8XOHD69&$%)i=xo+;:,. ";
-            //var chars = "xo. ";
-            var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars);
-            //bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 6, 12);
-            File.WriteAllText(@"E:\Pictures\avatar.txt", bmpstr);
+            var path = @"E:\Pictures\1.png";
+            Bitmap bitMap = new(path);
+            //var chars = "#8XOHD69&$%)i=xo+;:,. ";
+            var chars = "@#*x+/\\o:~-. ";
+            //var chars = "@#$xo);:',. ";
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 1, 2);
+            var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 2, 4);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 3, 6);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 4, 8);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 5, 10);
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 6, 12); 
+            //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 7, 14);
+            File.WriteAllText($"{path}.txt", bmpstr);
             Console.WriteLine("Done");
         }
     }
@@ -31,7 +39,7 @@ namespace PictureToCharsConsoleApp
                 for (int j = 0; j < bitMap.Height; j++)
                 {
                     var origalColor = bitMap.GetPixel(i, j);
-                    var grayScale = (int)(origalColor.R * .3 + origalColor.G * .59 + origalColor.B * .11);
+                    var grayScale = (int)(origalColor.R * .299 + origalColor.G * .587 + origalColor.B * .114);
                     var newColor = Color.FromArgb(grayScale, grayScale, grayScale);
                     bitMap.SetPixel(i, j, newColor);
                 }
