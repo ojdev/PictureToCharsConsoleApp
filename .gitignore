@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/PictureToCharsConsoleApp
+/PictureToCharsConsoleApp/bin/Debug/net5.0
+/PictureToCharsConsoleApp/obj

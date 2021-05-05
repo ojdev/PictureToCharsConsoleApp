@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Text;
 
 namespace PictureToCharsConsoleApp
 {
@@ -23,6 +24,7 @@ namespace PictureToCharsConsoleApp
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 6, 12); 
             //var bmpstr = bitMap.ToGrayBitmap().GetCharImage(chars, 7, 14);
             File.WriteAllText($"{path}.txt", bmpstr);
+            BitmapExtensions.CharsToBitmap($"{path}.txt", $"{path}.txt.png");
             Console.WriteLine("Done");
         }
     }
@@ -69,6 +71,24 @@ namespace PictureToCharsConsoleApp
                 bmpstr += Environment.NewLine;
             }
             return bmpstr;
+        }
+        public static void CharsToBitmap(string textFile, string saveBitmapPath)
+        {
+            var fontSize = 6;
+            using Font drawFont = new("Cascadia Code", fontSize);
+            Bitmap image = new(1, 1);
+            Graphics g = Graphics.FromImage(image);
+            var allText = File.ReadAllLines(textFile, Encoding.UTF8);
+            var text = string.Join(Environment.NewLine, allText);
+            SizeF sf = g.MeasureString(text, drawFont, allText[0].Length * fontSize);
+            image = new Bitmap(image, new Size(Convert.ToInt32(sf.Width), Convert.ToInt32(sf.Height)));
+            g = Graphics.FromImage(image);
+            g.Clear(Color.White);
+            g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            g.DrawString(text, drawFont, Brushes.Black, new RectangleF(new PointF(0, 0), sf));
+            image.Save(saveBitmapPath, System.Drawing.Imaging.ImageFormat.Png);
+            g.Dispose();
+            image.Dispose();
         }
     }
 }
