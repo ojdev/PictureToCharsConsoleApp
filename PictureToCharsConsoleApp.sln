@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureToCharsConsoleApp", "PictureToCharsConsoleApp\PictureToCharsConsoleApp.csproj", "{E504F92B-5497-45E4-9557-82C5B1D2EE37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PictureToCharsConsoleApp", "PictureToCharsConsoleApp\PictureToCharsConsoleApp.csproj", "{E504F92B-5497-45E4-9557-82C5B1D2EE37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PictureToCharsApp", "PictureToCharsApp\PictureToCharsApp.csproj", "{DFAFE4C1-81AB-4D49-A528-13A25AC45A06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E504F92B-5497-45E4-9557-82C5B1D2EE37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E504F92B-5497-45E4-9557-82C5B1D2EE37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E504F92B-5497-45E4-9557-82C5B1D2EE37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAFE4C1-81AB-4D49-A528-13A25AC45A06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAFE4C1-81AB-4D49-A528-13A25AC45A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAFE4C1-81AB-4D49-A528-13A25AC45A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAFE4C1-81AB-4D49-A528-13A25AC45A06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
